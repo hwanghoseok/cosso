@@ -8,7 +8,7 @@ library("mlbench")
 library("HTLR")
 #%%
 
-svm_compact = function(K = NULL, y, lambda, epsilon = 1e-6, epsilon_D = 1e-4)
+svm_compact = function(K = NULL, y, lambda, epsilon = 1e-6, epsilon_D = eplsilon_D)
 {
   out = list()
   
@@ -109,7 +109,7 @@ svm_compact = function(K = NULL, y, lambda, epsilon = 1e-6, epsilon_D = 1e-4)
 }
 
 
-svm = function(x = NULL, y, lambda, kernel, kpara, scale = FALSE, epsilon = 1e-6, epsilon_D = 1e-8)
+svm = function(x = NULL, y, lambda, kernel, kpara, scale = FALSE, epsilon = 1e-6, epsilon_D = epsilon_D)
 {
   out = list()
   n = NROW(x)

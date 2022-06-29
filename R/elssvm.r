@@ -7,6 +7,7 @@ library("lpSolve")
 library("parallel")
 library("mlbench")
 library("HTLR")
+library("caret")
 #%%
 
 
@@ -125,7 +126,6 @@ cstep.elssvm = function(x = NULL, y = NULL, valid_x = NULL, valid_y = NULL, nfol
     valid_x = NULL
     valid_y = NULL
   }
-  
   out$opt_param = opt_param
   out$opt_valid_err = opt_valid_err
   out$opt_ind = opt_ind
@@ -141,7 +141,6 @@ cstep.elssvm = function(x = NULL, y = NULL, valid_x = NULL, valid_y = NULL, nfol
   out$criterion = criterion
   out$nfolds = nfolds
   if (optModel) {
-    
     if (!is.null(valid_x) & !is.null(valid_y)) {
       out$opt_model = model_list[[opt_ind]]
     } else {
@@ -233,7 +232,7 @@ thetastep.elssvm = function(object, lambda_theta_seq = 2^{seq(-10, 10, length.ou
                                 err = 1 - acc
                               } else {
                                 
-                              }
+                              } 
                             } else {
                               err = Inf
                               theta = rep(0, anova_K$numK)
@@ -260,7 +259,7 @@ thetastep.elssvm = function(object, lambda_theta_seq = 2^{seq(-10, 10, length.ou
                                   theta = findtheta.elssvm(y = y, anova_kernel = anova_K, 
                                                         alpha = opt_model$alpha, bias = opt_model$bias, 
                                                         lambda = lambda, lambda_theta = lambda_theta_seq[j], gamma = gamma)
-                                })
+                                }) 
                                 if (inherits(error, "try-error")) {
                                   theta = rep(0, anova_K$numK)
                                 }
@@ -337,6 +336,7 @@ findtheta.elssvm = function(y, anova_kernel, alpha, bias, lambda, lambda_theta, 
 
     # find the theta vector only from the solution
     theta = QP[1:anova_kernel$numK]
+    
     return(round(theta, 6))
 }
 

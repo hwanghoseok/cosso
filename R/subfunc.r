@@ -48,7 +48,7 @@ kernelMatrix = function(x, y, kernel = "gaussian", kparam = 1.0) {
 
 
 
-spline_kernel = function(x, y) # 
+spline_kernel = function(x, y) 
 {
   x = as.matrix(x)
   y = as.matrix(y)
@@ -385,13 +385,10 @@ score = function(pred, y_test){
 confusion = confusionMatrix(as.factor(pred), as.factor(test_y))
 
 accuracy = confusion$overall["Accuracy"] # 정분류율
-Precision = confusion$byClass["Pos Pred Value"] # 정확도
-Recall = confusion$byClass["Sensitivity"]
-f1score = 2 * (Precision*Recall)/(Precision+Recall)
 error_rate = 1 - accuracy
 
-cat("\naccuracy:",accuracy, "\nPrecision:",Precision, "\nRecall:",Recall, "\nF1-score:",f1score, "\nerror_rate:",error_rate)
-  return(list(accuracy = accuracy, Precision = Precision, Recall = Recall, f1score = f1score, error_rate = error_rate))
+cat("\naccuracy:",accuracy, "\nerror_rate:",error_rate)
+  return(list(accuracy = accuracy, error_rate = error_rate))
 }
 
 
