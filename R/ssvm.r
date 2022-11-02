@@ -389,3 +389,4 @@ predict.ssvm = function(object, newx = NULL)
     
     return(list(class = pred_class, pred_value = pred_y))
 }
+

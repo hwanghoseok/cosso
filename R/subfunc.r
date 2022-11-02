@@ -391,7 +391,24 @@ cat("\naccuracy:",accuracy, "\nerror_rate:",error_rate)
   return(list(accuracy = accuracy, error_rate = error_rate))
 }
 
+###
+# install.packages("ggplot")
+# library(ggplot2)
 
+
+# prost_mean = c(0.0393, 0.0303, 0.0394, 0.0255)
+# parkin_mean = c(0.1991, 0.1675, 0.2569, 0.1964)
+# onar_mean = c(0.2510, 0.2294, 0.1684, 0.1471)
+# iono_mean = c(0.1333, 0.1198, 0.0819, 0.0768)
+# forest_mean = c(0.0268, 0.0186, 0.0277, 0.0189)
+# heart_mean = c(0.1893, 0.1713, 0.1676, 0.1498)
+
+# mean_df = data.frame(cbind(prost_mean, parkin_mean, sonar_mean, iono_mean, forest_mean, heart_mean))
+
+# olnames(mean_df) = c("Prostate Cancer" , "Parkinson", "Sonar", "Ionosphere", "Forest Fires", "Heart Clinical")
+
+# ggplot(data=mean_df, aes(y="miclassification rate")) +
+#    geom_bar(stat="identity", position=position_dodge())
 
 
 
