@@ -246,4 +246,3 @@ predict.svm = function(object, newx = NULL, newK = NULL)
 
 
 
-
