@@ -1,12 +1,3 @@
-#%%
-library("methods")
-library("stats")
-library("quadprog")
-library("lpSolve")
-library("parallel")
-library("mlbench")
-library("HTLR")
-#%%
 
 svm_compact = function(K = NULL, y, lambda, epsilon = 1e-6, epsilon_D = eplsilon_D)
 {
