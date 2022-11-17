@@ -1,16 +1,3 @@
-#%%
-library("methods")
-library("stats")
-library("quadprog")
-library("lpSolve")
-library("parallel")
-library("mlbench")
-library("HTLR")
-library("future")
-library("caret")
-#%%
-
-
 
 ############################################################################
 
